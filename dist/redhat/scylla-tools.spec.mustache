@@ -55,6 +55,7 @@ install -m755 bin/cqlsh.py $RPM_BUILD_ROOT%{_bindir}
 install -m755 tools/bin/filter_cassandra_attributes.py $RPM_BUILD_ROOT%{_bindir}
 install -m755 tools/bin/cassandra_attributes.py $RPM_BUILD_ROOT%{_bindir}
 install -m755 tools/bin/cassandra-stress $RPM_BUILD_ROOT%{_bindir}
+install -m755 tools/bin/cassandra-stress-shard-aware $RPM_BUILD_ROOT%{_bindir}
 install -m755 tools/bin/cassandra-stressd $RPM_BUILD_ROOT%{_bindir}
 install -m755 tools/bin/sstabledump $RPM_BUILD_ROOT%{_bindir}
 install -m755 tools/bin/sstablelevelreset $RPM_BUILD_ROOT%{_bindir}
@@ -81,6 +82,7 @@ ln -s %{_datadir}/scylla/cassandra/apache-cassandra-%{version}-%{release}.jar $R
 %{_bindir}/cqlsh
 %{_bindir}/cqlsh.py
 %{_bindir}/cassandra-stress
+%{_bindir}/cassandra-stress-shard-aware
 %{_bindir}/cassandra-stressd
 %{_bindir}/sstabledump
 %{_bindir}/sstablelevelreset
