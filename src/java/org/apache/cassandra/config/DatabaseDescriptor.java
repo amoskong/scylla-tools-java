@@ -498,8 +498,10 @@ public class DatabaseDescriptor
             }
             if (minSize < preferredSize)
             {
-                logger.warn("Small cdc volume detected at {}; setting cdc_total_space_in_mb to {}.  You can override this in cassandra.yaml",
-                            conf.cdc_raw_directory, minSize);
+                if (conf.cdc_enabled) {
+                    logger.warn("Small cdc volume detected at {}; setting cdc_total_space_in_mb to {}.  You can override this in cassandra.yaml",
+                                conf.cdc_raw_directory, minSize);
+                }
                 conf.cdc_total_space_in_mb = minSize;
             }
             else
